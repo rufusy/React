@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app"></div>
+</body>
+
+<script type="text/babel">
+    class App extends React.Component {
+        state = {
+            name: 'Rufusy',
+            age: '23'
+        }
+        handleClick(e){
+            //console.log(e.target);
+            console.log(this.state);
+        }
+        handleMouseOver(e){
+            console.log(e.target, e.pageX);
+        }
+        render(){
+            return(
+                <div className="app-content">
+                    <h1>Hey Ninja</h1>
+                    <p>My name is: {this.state.name} and I am {this.state.age}</p>
+                    <button onClick={this.handleClick}>click me</button>
+                    <button onMouseOver={this.handleMouseOver}>hover me</button>
+                </div>
+            )
+        }
+    }
+    ReactDOM.render(<App/>, document.getElementById('app'));
+</script>
+
+</html>
